@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cilium
+  namespace: argocd
+  labels:
+    appgroup: system
+spec:
+  destination:
+    namespace: cilium
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: applications/cilium
+    repoURL: https://github.com/dgo19/k3st-config.git
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
