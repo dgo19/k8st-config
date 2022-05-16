@@ -1,5 +1,5 @@
 apiVersion: v2
-name: trafik
+name: traefik
 description: traefik ingress proxy
 type: application
 version: 0.1.0
